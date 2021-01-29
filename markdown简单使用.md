@@ -1,9 +1,9 @@
-\1.   下划线操作：<u>Underlined Text</u>
+1. 下划线操作：<u>Underlined Text</u>
 
-\2.   利用github存储图片，在markdown引用图片链接，步骤如下：
+2. 利用github存储图片，在markdown引用图片链接，步骤如下：
 
 first将markdown需要用的图片放到git仓库中，发布到github上
- 
+
  second访问github仓库,[smshen/MarkdownPhotos · GitHub](https://link.zhihu.com/?target=https%3A//github.com/smshen/MarkdownPhotos)
 
 third访问图片[MarkdownPhotos/test.jpg at master · smshen/MarkdownPhotos · GitHub](https://link.zhihu.com/?target=https%3A//github.com/smshen/MarkdownPhotos/blob/master/Res/test.jpg)
@@ -14,9 +14,9 @@ fifth拷贝链接地址[https://raw.githubusercontent.com/smshen/MarkdownPhotos/
 
 sixth在Markdown中引用图片，![Aaron Swartz]([https://raw.githubusercontent.com/smshen/MarkdownPhotos/master/Res/test.jpg](https://link.zhihu.com/?target=https%3A//raw.githubusercontent.com/smshen/MarkdownPhotos/master/Res/test.jpg))。
 
-\3.  *斜体*   _斜体_   **粗体**   ***加粗斜体***  ~~删除线~~
+3. *斜体*   _斜体_   **粗体**   ***加粗斜体***  ~~删除线~~
 
-\4. # 一级标题   ## 二级标题  以此类推
+4. # 一级标题   ## 二级标题  以此类推
 
  我展示的是一级标题
 
@@ -26,7 +26,7 @@ sixth在Markdown中引用图片，![Aaron Swartz]([https://raw.githubusercontent
 
 \-------------------
 
-\5. 超链接：
+5. 超链接：
 
 5.1. 行内式
 
@@ -63,6 +63,6 @@ sixth在Markdown中引用图片，![Aaron Swartz]([https://raw.githubusercontent
 
 <http://example.com>  
 
-\7. https://blog.csdn.net/witnessai1/article/details/52551362  下次笔记网址 
+7. https://blog.csdn.net/witnessai1/article/details/52551362  下次笔记网址 
 
 8.如何换行:方法一:编辑好一行文字后敲两个空格符,在按回车编辑另一行文字  方法二:编辑一行文字后回车,再回车编辑另一行  方法三:编辑第一行的时候前后加上<br/>和</br>
