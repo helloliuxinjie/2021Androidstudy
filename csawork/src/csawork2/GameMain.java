@@ -1,7 +1,6 @@
 package csawork2;
 import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Scanner;
 
 /**
@@ -13,8 +12,7 @@ import java.util.Scanner;
  *  Notice: 第二次修改
  *  1.怪物和主角都继承一个类,降低耦合度
  *  2.变量命名规范,Java独有的驼峰命名法(项目名全部小写,包名全部小写,类名单词首字母大写,变量名方法名首字母小写,常量名全部大写)
- *  3.代码重复度(随机选择一个怪物攻击部分if else)
- *  4.添加图形化界面
+ *  3.代码重复度(随机选择一个怪物攻击部分if else
  *
  */
 public class GameMain extends JFrame {
@@ -56,15 +54,15 @@ public class GameMain extends JFrame {
 
 
         // 对象:一个主角
-        GameLead gameLead = new GameLead(lead, leadLife, leadAttack, leadDefensive);
+        GameLead gameLead = new GameLead(lead, leadLife, leadAttack, leadDefensive,true);
 
         //对象: 一个怪物Boss,三个工具人  创建arraylist集合
         ArrayList<GameMonster> list=new ArrayList<>();
         //Boss
-        GameMonster gameMonster1 = new GameMonster(monster1, monsterLife, monsterAttack);
-        GameMonster gameMonster2 = new GameMonster("哥尔赞", 200, 50);
-        GameMonster gameMonster3 = new GameMonster("宿那鬼", 235, 60);
-        GameMonster gameMonster4 = new GameMonster("基里艾洛德人", 250, 55);
+        GameMonster gameMonster1 = new GameMonster(monster1, monsterLife, monsterAttack,0,true);
+        GameMonster gameMonster2 = new GameMonster("哥尔赞", 200, 50,0,true);
+        GameMonster gameMonster3 = new GameMonster("宿那鬼", 235, 60,0,true);
+        GameMonster gameMonster4 = new GameMonster("基里艾洛德人", 250, 55,0,true);
 
         list.add(gameMonster1);
         list.add(gameMonster2);
@@ -101,19 +99,20 @@ public class GameMain extends JFrame {
         // 战斗结束
         System.out.println("The battle is over!!!");
         //主角血量
-        System.out.println(gameLead.getLead()+"血量为:"+gameLead.getLeadLife());
-
-        for(int i=0;i<4;i++) {
+        System.out.println(gameLead.getPerson()+"血量为:"+gameLead.getPersonLife());
+        //怪物个数
+        int monsterNum=4;
+        for(int i=0;i<monsterNum;i++) {
             //怪物血量
-            System.out.println(list.get(i).getMonster() + "血量为:" + list.get(i).getMonsterLife());
+            System.out.println(list.get(i).getPerson() + "血量为:" + list.get(i).getPersonLife());
         }
 
         //图形化界面暂无
 
     }
 
-    /**根据随机数在那个范围来决定主角攻击哪一个怪物
-     *
+    /**
+     * 根据随机数在那个范围来决定主角攻击哪一个怪物
      * @param attackOrder
      * @return
      */
@@ -135,13 +134,13 @@ public class GameMain extends JFrame {
      */
     private static boolean leadAttackOrder(GameLead gameLead, ArrayList<GameMonster> list){
         // 取值为0~9的十个整数
-        int attackOrder=new Random().nextInt();
+        int attackOrder=(int)(Math.random()*10);
+        //获得怪物编号
         int monsterNum= judgeMonster(attackOrder);
-
         // 如果怪物的生命值为0, 主角就在随机选择一个怪物进行攻击,  防止对无生命值的怪物一直进行攻击
-        while (!list.get(monsterNum).getLifeFlag()){
-            attackOrder=new Random().nextInt();
-            monsterNum=(attackOrder);
+        while (monsterNum<4&&!list.get(monsterNum).getLifeFlag()){
+            attackOrder=(int)(Math.random()*10);
+            monsterNum=judgeMonster(attackOrder);
 
         }
         return attackMonsterLead(attackOrder,gameLead,list);
@@ -160,10 +159,10 @@ public class GameMain extends JFrame {
         System.out.println("主角和怪物的初始属性如下:");
         System.out.println("名称    生命值    攻击力    防御力");
         System.out.println(lead+"       "+leadLife+"       "+leadAttack+"       "+leadDefensive);
-        System.out.println(list.get(0).getMonster()+"       "+list.get(0).getMonsterLife()+"       "+list.get(0).getMonsterAttack()+"       "+0);
-        System.out.println(list.get(1).getMonster()+"       "+list.get(1).getMonsterLife()+"       "+list.get(1).getMonsterAttack()+"       "+0);
-        System.out.println(list.get(2).getMonster()+"       "+list.get(2).getMonsterLife()+"       "+list.get(2).getMonsterAttack()+"       "+0);
-        System.out.println(list.get(3).getMonster()+"       "+list.get(3).getMonsterLife()+"       "+list.get(3).getMonsterAttack()+"       "+0);
+        System.out.println(list.get(0).getPerson()+"       "+list.get(0).getPersonLife()+"       "+list.get(0).getPersonAttack()+"       "+0);
+        System.out.println(list.get(1).getPerson()+"       "+list.get(1).getPersonLife()+"       "+list.get(1).getPersonAttack()+"       "+0);
+        System.out.println(list.get(2).getPerson()+"       "+list.get(2).getPersonLife()+"       "+list.get(2).getPersonAttack()+"       "+0);
+        System.out.println(list.get(3).getPerson()+"       "+list.get(3).getPersonLife()+"       "+list.get(3).getPersonAttack()+"       "+0);
 
     }
 
@@ -184,19 +183,19 @@ public class GameMain extends JFrame {
         int []injuryLife2;
         int leadLife;
 
-        injuryLife = gameLead.attack(list.get(monsterNum));
-        System.out.println(gameLead.getLead()+"对"+list.get(monsterNum).getMonster()+"造成"+injuryLife[0]+"点伤害, "+list.get(monsterNum).getMonster()+"生命值为:"+injuryLife[1]);
+        injuryLife = gameLead.attackMonster(list.get(monsterNum));
+        System.out.println(gameLead.getPerson()+"对"+list.get(monsterNum).getPerson()+"造成"+injuryLife[0]+"点伤害, "+list.get(monsterNum).getPerson()+"生命值为:"+injuryLife[1]);
         // 主角攻击老大时(monster=0), 返回怪物老大的血量否则怪物boss血量为1
         bossLife=monsterNum==0?injuryLife[1]:1;
 
         //怪物反击
-        if(list.get(monsterNum).getMonsterLife()!=0) {
-            injuryLife2 = list.get(monsterNum).attack(gameLead);
-            System.out.println(list.get(monsterNum).getMonster() + "对" + gameLead.getLead() + "造成" + injuryLife2[0] + "点伤害, " + gameLead.getLead() + "生命值为:" + injuryLife2[1]);
+        if(list.get(monsterNum).getPersonLife()!=0) {
+            injuryLife2 = list.get(monsterNum).attackLead(gameLead);
+            System.out.println(list.get(monsterNum).getPerson() + "对" + gameLead.getPerson() + "造成" + injuryLife2[0] + "点伤害, " + gameLead.getPerson() + "生命值为:" + injuryLife2[1]);
             leadLife=injuryLife2[1];
         }else {
-            System.out.println(list.get(monsterNum).getMonster() + "生命值为:0, 无法做出反击!  " + gameLead.getLead() + "生命值为:" + gameLead.getLeadLife());
-            leadLife = gameLead.getLeadLife();
+            System.out.println(list.get(monsterNum).getPerson() + "生命值为:0, 无法做出反击!  " + gameLead.getPerson() + "生命值为:" + gameLead.getPersonLife());
+            leadLife = gameLead.getPersonLife();
         }
         boolean flag=(bossLife!=0&&leadLife!=0);
         return flag;

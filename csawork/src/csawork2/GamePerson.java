@@ -3,7 +3,7 @@ package csawork2;
 /**
  * @author Liuxinjie
  * @version 1.0
- * @date 2021/2/27 027 23:57
+ * @date 2021/2/28 027 13:57
  * @software IDEA
  */
 public class GamePerson {
@@ -28,7 +28,7 @@ public class GamePerson {
     private int personDefensive;
 
     /**
-     *标签怪物血量是否为0
+     *标签角色血量是否为0
      */
     private boolean lifeFlag ;
 
@@ -67,37 +67,23 @@ public class GamePerson {
      * @param personAttack
      * @param personDefensive
      */
-    public GamePerson(String person, int personLife, int personAttack, int personDefensive){
+    public GamePerson(String person, int personLife, int personAttack, int personDefensive,boolean lifeFlag){
         this.person = person;
         this.personAttack = personAttack;
         this.personDefensive = personDefensive;
         this.personLife = personLife;
+        this.lifeFlag=lifeFlag;
+
     }
 
 
-    /**
-     * 攻击Game_Monster enemy
-     * @param enemy
-     * @return
+    /**攻击GamePerson enemy
      */
-    public int[] attack(GamePerson enemy){
-        // 伤害最低为1且不能为负数, 伤害采用随机的方式, 对敌人的伤害=自己的攻击力-敌人的防御力
-        // 攻击力和防御力在设定值的基础上做-20%~20%的减少或者增加, 这里是随机的
-        //Math.random()*(n-m)+m 范围m到n的随机数
-        int injury=(int)((1+(Math.random()*0.4-0.2))* getPersonAttack());
-        while(injury<1) {
-            injury = (int) ((1 + (Math.random() * 0.4 - 0.2)) * getPersonAttack());
-        }
-        //lead的血量=lead的生命值-this.injury
-        int monsterBlood=enemy.getPersonLife()-injury;
-
-        //将lead的血量返回, 同时考虑血量为负数的时候, 将其设置为0
-        enemy.setPersonLife(monsterBlood>0?monsterBlood:0);
-        enemy.setLifeFlag(monsterBlood>0?true:false);
-        int[] temp=new int[2];
-        temp[0]=injury;
-        temp[1]=enemy.getPersonLife();
-        return temp;
-
+    public int[] attackLead(GameLead gameLead){
+        return new int[2];
     }
+    public int[] attackMonster(GameMonster gameMonster){
+        return new int[2];
+    }
+
 }
