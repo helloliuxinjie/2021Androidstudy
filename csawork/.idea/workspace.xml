@@ -32,8 +32,8 @@
       <file leaf-file-name="GameMain.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/csawork2/GameMain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
-              <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+            <state relative-caret-position="266">
+              <caret line="14" column="31" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="14" selection-end-column="31" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,8 +44,8 @@
       <file leaf-file-name="GamePerson.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/csawork2/GamePerson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1200">
-              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+            <state relative-caret-position="1558">
+              <caret line="82" column="26" lean-forward="true" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
               <folding>
                 <element signature="e#484#485#0" expanded="true" />
                 <element signature="e#513#514#0" expanded="true" />
@@ -73,8 +73,8 @@
       <file leaf-file-name="GameMonster.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/csawork2/GameMonster.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="111">
-              <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+            <state relative-caret-position="304">
+              <caret line="43" column="30" lean-forward="true" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -82,8 +82,8 @@
       <file leaf-file-name="GameLead.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/csawork2/GameLead.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="817">
-              <caret line="43" column="55" lean-forward="true" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
+            <state relative-caret-position="149">
+              <caret line="44" column="30" lean-forward="true" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -118,11 +118,11 @@
         <option value="$PROJECT_DIR$/src/CSA_work2/Game_Monster.java" />
         <option value="$PROJECT_DIR$/src/CSA_work2/Game_Main.java" />
         <option value="$PROJECT_DIR$/src/csawork2/Game_Main.java" />
-        <option value="$PROJECT_DIR$/src/csawork2/GameLead.java" />
         <option value="$PROJECT_DIR$/src/csawork2/GameMonster.java" />
         <option value="$PROJECT_DIR$/src/csawork2/GameTest.java" />
-        <option value="$PROJECT_DIR$/src/csawork2/GameMain.java" />
         <option value="$PROJECT_DIR$/src/csawork2/GamePerson.java" />
+        <option value="$PROJECT_DIR$/src/csawork2/GameLead.java" />
+        <option value="$PROJECT_DIR$/src/csawork2/GameMain.java" />
       </list>
     </option>
   </component>
@@ -334,12 +334,12 @@
       <workItem from="1614436472468" duration="5206000" />
       <workItem from="1614480315924" duration="242000" />
       <workItem from="1614480591738" duration="165000" />
-      <workItem from="1614480779298" duration="15138000" />
+      <workItem from="1614480779298" duration="15839000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79543000" />
+    <option name="totallyTimeSpent" value="80244000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -372,7 +372,7 @@
       <window_info id="Image Layers" order="1" />
       <window_info anchor="right" id="Capture Analysis" order="1" />
       <window_info anchor="bottom" id="Version Control" order="4" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="6" sideWeight="0.49731904" visible="true" weight="0.33760685" />
+      <window_info active="true" anchor="bottom" id="Run" order="6" sideWeight="0.49731904" visible="true" weight="0.3105413" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info content_ui="combo" id="Project" order="5" sideWeight="0.48305085" visible="true" weight="0.22855228" />
       <window_info anchor="bottom" id="Alibaba Cloud View" order="12" />
@@ -774,8 +774,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/csawork2/GamePerson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1200">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        <state relative-caret-position="1558">
+          <caret line="82" column="26" lean-forward="true" selection-start-line="82" selection-start-column="26" selection-end-line="82" selection-end-column="26" />
           <folding>
             <element signature="e#484#485#0" expanded="true" />
             <element signature="e#513#514#0" expanded="true" />
@@ -801,22 +801,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/csawork2/GameMonster.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="111">
-          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+        <state relative-caret-position="304">
+          <caret line="43" column="30" lean-forward="true" selection-start-line="43" selection-start-column="30" selection-end-line="43" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/csawork2/GameLead.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="817">
-          <caret line="43" column="55" lean-forward="true" selection-start-line="43" selection-start-column="55" selection-end-line="43" selection-end-column="55" />
+        <state relative-caret-position="149">
+          <caret line="44" column="30" lean-forward="true" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/csawork2/GameMain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="3" lean-forward="true" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="3" />
+        <state relative-caret-position="266">
+          <caret line="14" column="31" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="14" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
