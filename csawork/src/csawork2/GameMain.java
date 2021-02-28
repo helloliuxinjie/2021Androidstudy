@@ -1,5 +1,6 @@
 package csawork2;
 import javax.swing.*;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,6 +17,62 @@ import java.util.Scanner;
  *
  */
 public class GameMain extends JFrame {
+
+
+    /**
+     * 用来存放角色战斗结束时血量,依次为主角和4个怪物
+     * 静态数组
+     */
+    public static int[] blood=new int[5];
+
+    /**
+     * 用来存放角色初始血量,依次为主角和4个怪物
+     * 静态数组
+     */
+    public static int[] originBlood=new int[5];
+
+    /**
+     * 用来存放角色的名称,依次为主角和4个怪物
+     * 静态数组
+     */
+    public static String[]name=new String[5];
+
+    /**
+     * 初始化血条界面展示窗口
+     */
+    public void init(){
+        this.setTitle("The rest of blood");
+        this.setSize(300,200);
+        this.setLocation(300,300);
+
+        //点叉后结束进程
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        //显示窗口
+        this.setVisible(true);
+    }
+
+    /**
+     * 血条图形表示
+     * @param g
+     */
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        g.setColor(Color.RED);
+        //角色数量
+        int roleNum=5;
+        //满血为100
+        double fullBlood=100.0;
+        //y轴增量
+        int yPlus=0;
+        for(int i=0;i<roleNum;i++){
+            g.drawString(name[i],70,100+yPlus);
+            g.drawRect(140,88+yPlus,100,10);
+            g.fillRect(140,88+yPlus, (int)(fullBlood*blood[i]/originBlood[i]),9);
+            yPlus+=15;
+        }
+    }
+
     public static void main(String[] args) {
         // ###主角###
         Scanner in =new Scanner(System.in);
@@ -102,12 +159,22 @@ public class GameMain extends JFrame {
         System.out.println(gameLead.getPerson()+"血量为:"+gameLead.getPersonLife());
         //怪物个数
         int monsterNum=4;
+
+        blood[0]=gameLead.getPersonLife();
         for(int i=0;i<monsterNum;i++) {
             //怪物血量
             System.out.println(list.get(i).getPerson() + "血量为:" + list.get(i).getPersonLife());
+            //将血量存放在blood数组中
+            blood[i+1]=list.get(i).getPersonLife();
         }
 
-        //图形化界面暂无
+        //图形化界面
+        //创建窗口对象
+        GameMain gameMain=new GameMain();
+        //调用窗口对象的init(), 将其显示出来
+        gameMain.init();
+
+
 
     }
 
@@ -163,7 +230,16 @@ public class GameMain extends JFrame {
         System.out.println(list.get(1).getPerson()+"       "+list.get(1).getPersonLife()+"       "+list.get(1).getPersonAttack()+"       "+0);
         System.out.println(list.get(2).getPerson()+"       "+list.get(2).getPersonLife()+"       "+list.get(2).getPersonAttack()+"       "+0);
         System.out.println(list.get(3).getPerson()+"       "+list.get(3).getPersonLife()+"       "+list.get(3).getPersonAttack()+"       "+0);
-
+        //将角色原始血量存入数组中
+        originBlood[0]=leadLife;
+        name[0]=lead;
+        int roleNum=5;
+        for(int i=0;i<roleNum;i++){
+            if(i+1<5) {
+                originBlood[i + 1] = list.get(i).getPersonLife();
+                name[i+1]=list.get(i).getPerson();
+            }
+        }
     }
 
 

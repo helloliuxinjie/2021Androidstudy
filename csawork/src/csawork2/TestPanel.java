@@ -11,8 +11,7 @@ import java.awt.event.WindowEvent;
  * @software IDEA
  */
 // panel 是在容器里面的,可以看成一个空间, 但是不能单独存在
-public class
-TestPanel {
+public class TestPanel {
     public static void main(String[] args) {
         Frame frame=new Frame();
         Panel panel=new Panel();
